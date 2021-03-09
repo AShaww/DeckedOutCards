@@ -1,10 +1,7 @@
 /**
  * Simple card game using correct OOP, including Abstraction/Encapsulation.
- * For project inquiries; please do not hesitate to send an email across.
  * Author: Amir Shaw
- * Email: AmirShaw@hotmail.co.uk
  */
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,12 +12,8 @@ using namespace std;
  * Decided to go with enum as constants to be used within the game, could have used arrays. Decided to learn and go with enum instead.
  * Can/will change enum to dynamic arrays depending on if not being able to work with them...
  */
-enum Rank {
-    ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE
-};
-enum Suit {
-    HEARTS, DIAMOND, SPADES, CLUBS
-};
+enum Rank { ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE };
+enum Suit { HEARTS, DIAMOND, SPADES, CLUBS };
 /**
  * Struct card made from enum of rank and suit
  * also contains two ints, to help count the amount of enum constants in each enum structs
@@ -37,11 +30,19 @@ struct Card {   //Own data type of Card
 struct Deck {
     vector<Card> cards;
     string card_back;
-    //int max_deck_size = 52; //Sets deck size to 52 (0 - 51) Dont need this as im doing a loop count of 52
-    //Own data type of Deck
+};
+struct Player {
+    vector<Card> hand;
+    string name;
+    int score;
+};
+struct Game {
+    vector<Player> players;
+    Deck deck;
+    int num_players = 2;
+    int num_cards_per_hand = 1;
 };
 
-// Code here uses references of objects... How to incorporate pointers into this application... Will have to plot and think how to adequately apply pointers!
 /**
  * List of Prototypes
  *
@@ -52,22 +53,22 @@ void print_card(const Card &);
 void shuffle(Deck &);
 void deal_cards(Deck &, vector<Card> &, vector<Card> &, int);
 void print_hand(const vector<Card> &);   //Consted - not changing the hand in the function.
+void initialise(Game &);
+
+void add_player(Game &game);
+
 /**
  * Clean this main up, looks messy. If needing to add more cards to the dealer/player hand, the main will be too big...
  * Maybe a game object to call functions depending on the users choice. Think about this.
  * @return
  */
 int main() {
-    Deck my_deck;
-    initialise(my_deck);
-//    print_deck(my_deck); // Prints out deck in order from 0-12 of enum Value
-    shuffle(my_deck);   //Shuffles deck - uncomment above line to see ordered deck. Run this line and check for shuffled deck
-//    print_deck(my_deck);    // Uncomment this line to see the shuffled deck.
+    Game game;
+    initialise(game);
 
     vector<Card> dealer_hand;
     vector<Card> player_hand;
-
-    deal_cards(my_deck, dealer_hand, player_hand, 5);
+    //deal_cards(my_deck, dealer_hand, player_hand, 5);
     cout << '\n';
     print_hand(player_hand);
     cout << '\n';
@@ -146,5 +147,21 @@ void deal_cards(Deck &deck, vector<Card> &dealer_hand, vector<Card> &player_hand
 void print_hand(const vector<Card> &hand) {
     for (Card c : hand) {
         print_card(c);
+    }
+}
+
+void initialise(Game& game){
+    initialise(game.deck);
+    shuffle(game.deck);
+    add_player(game);
+}
+
+void add_player(Game &game) {
+// for loop? to add player to vector of player in Game?
+// if player is < game.num_players; player++
+    for (int player = 0; player < game.num_players; player++)
+    {
+        Player new_player;
+        game.players.push_back(new_player);
     }
 }
