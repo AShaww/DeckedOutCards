@@ -18,6 +18,11 @@ enum Rank {
 enum Suit {
     HEARTS, DIAMOND, SPADES, CLUBS
 };
+/**
+ *  ^^^^ Too much work is needed to bring the value of the enum into the string literal of what it is. As i will either need to make a switch of sorts etc.
+ *  Might just look at the Moodle examples and see if i can incorporate a dynamic array into this application.
+ */
+
 
 struct Card {
     Rank rank;
@@ -45,28 +50,24 @@ struct Game {
 };
 
 void initialiseDeck(Deck &);
-
 void print_deck(const Deck &);
-
 void print_card(const Card &);
-
 void shuffle(Deck &);
-
 void deal_cards(Game &);
-
 void print_hand(const vector<Card> &);   //Consted - not changing the hand in the function.
-
 void initialiseGame(Game &);
-
 void add_player(Game &game);
-
 void print_game(const Game &);
 
 int main() {
+    //Gorgeous Main! Nice and clean... :)
+    //Everything works so far. 
     Game game;
     initialiseGame(game);
     deal_cards(game);
     print_game(game);
+
+    // Looking at the main this game will need a 'play function' which the initialise / deal_cards / print_game can be abstracted into a play function. This will clean the main up even more!
 
     //Maybe Work on a initialise such as game object, which calls all of these functions.
     //Will make the main look better, as it will just have a game object called.??? Think about it.
@@ -111,7 +112,7 @@ void deal_cards(Game &game) {
         for( int player = 0; player < game.num_players; player++ ) {
             game.players[ player ].hand.push_back(game.deck.cards[ 0 ]);
             game.deck.cards.erase(game.deck.cards.begin());
-            //Same line of code as before, just simpler. Instead of having two hands the player and the dealer.
+            // Same line of code as before, just simpler. Instead of having two hands the player and the dealer.
             // the line above adds the number of cards to the hands of number of players.
             // [107-108] adding top level shuffled card to hand of player in game object, per player.
         }
@@ -152,4 +153,5 @@ void print_game(const Game &game) {
     cout << "the size of deck " << sizeof(game.deck) << endl;
     print_deck(game.deck);  // prints full deck (cards remaining after cards have been dealt
 }
+
 
