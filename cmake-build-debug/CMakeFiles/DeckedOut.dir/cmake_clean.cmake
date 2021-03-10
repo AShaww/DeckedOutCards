@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/DeckedOut.dir/Player.cpp.obj"
   "CMakeFiles/DeckedOut.dir/main.cpp.obj"
   "DeckedOut.exe"
   "DeckedOut.exe.manifest"

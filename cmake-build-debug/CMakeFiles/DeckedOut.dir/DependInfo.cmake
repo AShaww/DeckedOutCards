@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/AmirS/Documents/GitHub/DeckedOutCards/Player.cpp" "C:/Users/AmirS/Documents/GitHub/DeckedOutCards/cmake-build-debug/CMakeFiles/DeckedOut.dir/Player.cpp.obj"
   "C:/Users/AmirS/Documents/GitHub/DeckedOutCards/main.cpp" "C:/Users/AmirS/Documents/GitHub/DeckedOutCards/cmake-build-debug/CMakeFiles/DeckedOut.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")

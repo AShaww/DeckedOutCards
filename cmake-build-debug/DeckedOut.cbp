@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/AmirS/Documents/GitHub/DeckedOutCards/Player.cpp">
+			<Option target="DeckedOut"/>
+		</Unit>
 		<Unit filename="C:/Users/AmirS/Documents/GitHub/DeckedOutCards/main.cpp">
 			<Option target="DeckedOut"/>
 		</Unit>

@@ -3,4 +3,4 @@ project(DeckedOut)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DeckedOut main.cpp)
+add_executable(DeckedOut main.cpp Player.cpp)
