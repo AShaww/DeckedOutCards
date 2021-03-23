@@ -1,3 +1,0 @@
-C:/Users/AmirS/Documents/GitHub/DeckedOutCards/cmake-build-debug/CMakeFiles/DeckedOut.dir
-C:/Users/AmirS/Documents/GitHub/DeckedOutCards/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/AmirS/Documents/GitHub/DeckedOutCards/cmake-build-debug/CMakeFiles/rebuild_cache.dir
